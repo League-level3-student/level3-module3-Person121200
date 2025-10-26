@@ -55,16 +55,45 @@ public class _01_StringMethods {
     // You cannot assume there are no extra spaces around the name, but you can
     // assume there is only one space between the first and last name
     public static String lineLeader(String s1, String s2, String s3) {
-        return null;
+    	s1 = s1.trim();
+    	s2 = s2.trim();
+    	s3 = s3.trim();
+    	String space1 = s1.substring(s1.indexOf(' ')+1);
+    	String space2 = s2.substring(s2.indexOf(' ')+1);
+    	String space3 = s3.substring(s3.indexOf(' ')+1);
+        if (space1.compareTo(space2) <= 0 && space1.compareTo(space3) <= 0) {
+            return s1;
+        } else if (space2.compareTo(space1) <= 0 && space2.compareTo(space3) <= 0) {
+            return s2;
+        } else {
+            return s3;
+        }
+    	
+    	
     }
 
     // Return the sum of all numerical digits in the String
     public static int numeralSum(String s) {
-        return 0;
+    	int total = 0;
+    	for(int i = 0;i<s.length(); i++)
+    		if(Character.isDigit(s.charAt(i))) {
+    			total+=Character.getNumericValue(s.charAt(i));
+
+    		}
+        return total;
     }
 
     // Return the number of times String substring appears in String s
     public static int substringCount(String s, String substring) {
+    	int index;
+    	int count = 0;
+    	while(s.indexOf(substring) != -1) {
+    		index = s.indexOf(substring);
+    		count +=1;
+    		index+;
+    		
+    	}
+    	
         return 0;
     }
 
