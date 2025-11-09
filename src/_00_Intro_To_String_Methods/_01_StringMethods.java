@@ -123,12 +123,16 @@ public class _01_StringMethods {
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
     	int count = 0;
-    	for(int i = 0; i<s.length(); i++) {
-    		System.out.println(s);
-    		if(s.substring(s.length()-substring.length()).equals(substring)) {
-    			count ++;
+    	String[] arrayS =  s.split(" ");
+    	for(int i = 0; i<arrayS.length; i++) {
+    		if(arrayS[i].length()>=substring.length()) {
+    	   		if(arrayS[i].substring(arrayS[i].length()-substring.length()).equals(substring)) {
+        			count+=1;
+        		}
     		}
+ 
     	}
+
     	return count;
     }
 
@@ -136,14 +140,32 @@ public class _01_StringMethods {
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
-        return 0;
+    	int beg = s.indexOf(substring);
+    	int end = s.lastIndexOf(substring);
+    	return end - (beg+substring.length());
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
-        return true;
+    	s = s.trim();
+    	String hold = "";
+    	for(int i = 0; i<s.length(); i++) {
+    		if(s.charAt(i)) {
+    			
+    		}
+    	}
+    	for(int i = s.length()-1; i>=0; i--) {
+    		
+    		hold += s.charAt(i);
+    	}
+    	if(s.equals(hold)) {
+            return true;
+
+    	}
+    	
+    	return false;
     }
 }
 
