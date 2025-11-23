@@ -17,10 +17,21 @@ public class _01_TheWave {
      * 1. The input string will always be lower case but maybe empty.
      * 2. If the character in the string is whitespace then pass over it as
      *    if it was an empty seat.
-     */
-    
-    public static ArrayList<String> wave(String str) {
         
-        return null;
+ */
+    public static ArrayList<String> wave(String str) {
+    	String temp ="";
+        str = str.replace(" ", "");
+    	ArrayList<String> wave = new ArrayList<String>(str.length());
+    	for(int i = 0; i<str.length(); i++) {
+    		if(str.charAt(i) != ' ') {
+    			 temp = str.replace(str.substring(i, i+1), str.substring(i, i+1).toUpperCase());
+    			 wave.add(temp);
+    			 temp = "";
+    			
+    		}
+    	}
+    	
+    		return wave;
     }
 }

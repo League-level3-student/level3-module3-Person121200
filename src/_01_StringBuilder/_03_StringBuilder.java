@@ -35,6 +35,13 @@ public class _03_StringBuilder {
     }
     
     public static String delete(String str, int startIndex, int endIndex) {
-        return null;
+    	String temp = "";
+    	char[] list = str.toCharArray();
+    	for(int i = 0; i<list.length; i++) {
+    		if(i<startIndex || i>endIndex) {
+    			temp+= list[i];
+    		}
+    	}
+        return temp;
     }
 }
